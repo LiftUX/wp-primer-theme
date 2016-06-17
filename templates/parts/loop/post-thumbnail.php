@@ -1,15 +1,17 @@
 <?php
 /**
- * The template part for displaying the post thumbnail.
+ * Template part for displaying the post thumbnail inside The Loop.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package basis
+ * @package Primer
  */
 ?>
 
-<?php if( has_post_thumbnail() ): ?>
-<div class="featured-image">
-	<?php the_post_thumbnail( 'basis-featured' ); ?>
-</div><!-- .featured-image -->
+<?php if ( has_post_thumbnail() ) : ?>
+
+	<div class="featured-image">
+
+		<?php the_post_thumbnail( 'primer-featured' ) ?>
+
+	</div><!-- .featured-image -->
+
 <?php endif; ?>

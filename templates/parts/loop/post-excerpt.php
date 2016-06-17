@@ -1,12 +1,13 @@
 <?php
 /**
- * This is the post excerpt template.
+ * Template part for displaying the post excerpt inside The Loop.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package basis
+ * @package Primer
  */
 ?>
+
 <div class="entry-summary">
-	<?php the_excerpt(); ?>
+
+	<?php the_excerpt() ?>
+
 </div><!-- .entry-summary -->

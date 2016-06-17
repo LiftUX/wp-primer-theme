@@ -1,18 +1,24 @@
 <?php
 /**
- * The template part for displaying the post content.
+ * Template part for displaying the post content inside The Loop.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
- *
- * @package basis
+ * @package Primer
  */
 ?>
+
 <div class="entry-content">
-	<?php the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'basis' ) ); ?>
+
 	<?php
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'basis' ),
+
+	the_content( __( 'Read More <span class="meta-nav">&rarr;</span>', 'primer' ) );
+
+	wp_link_pages(
+		array(
+			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'primer' ),
 			'after'  => '</div>',
-		) );
+		)
+	);
+
 	?>
+
 </div><!-- .entry-content -->

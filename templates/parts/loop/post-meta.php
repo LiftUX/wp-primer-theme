@@ -1,16 +1,33 @@
-	<div class="entry-meta">
+<?php
+/**
+ * Template part for displaying the post meta inside The Loop.
+ *
+ * @package Primer
+ */
+?>
 
-		<span class="posted-meta">
-			<?php printf( __( '%s by %s' , 'basis' ), basis_posted_on(), get_the_author_link() ); ?>
-		</span>
+<div class="entry-meta">
 
-		<span class="comments-number">
-			<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-				 &mdash;
-				<a href="<?php the_permalink(); ?>#comments">
-					<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'basis' ), __( '1 Comment', 'basis' ), __( '% Comments', 'basis' ) ); ?></span>
-				</a>
-			<?php endif; ?>
-		</span>
+	<span class="posted-meta">
 
-	</div><!-- .entry-meta -->
+		<?php printf( esc_html_x( '%1$s by %2$s', '1. post date, 2. author name', 'primer' ), primer_posted_on(), get_the_author_link() ) ?>
+
+	</span>
+
+	<span class="comments-number">
+
+		<?php if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) : ?>
+
+			 &mdash;
+
+			<a href="<?php echo get_comments_link() ?>">
+
+				<span class="comments-link"><?php comments_popup_link( esc_html__( 'Leave a comment', 'primer' ), esc_html__( '1 Comment', 'primer' ), esc_html_x( '% Comments', 'number of comments', 'primer' ) ) ?></span>
+
+			</a>
+
+		<?php endif; ?>
+
+	</span>
+
+</div><!-- .entry-meta -->
